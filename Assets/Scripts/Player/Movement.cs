@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
 
    [Header("Sounds")]
    [SerializeField] private AudioClip jumpSound;
+   [SerializeField] private AudioClip powerUpSound;
 
    [Header("Coyote Time")]
    [SerializeField] private float coyoteTime;
@@ -43,6 +44,8 @@ public class Movement : MonoBehaviour
         anim = GetComponent<Animator>();
         boxcoll = GetComponent<BoxCollider2D>();
    }
+
+
 
 
     private void Update() 
@@ -163,8 +166,23 @@ public class Movement : MonoBehaviour
 
 
 
+    private void OnTriggerEnter2D(Collider2D coll) 
+    {
+        if(coll.tag == "PowerUp")
+            {
+                speed += 5;
+                SoundManager.instance.PlaySound(powerUpSound);
+                Destroy(coll.gameObject);
+                StartCoroutine(ResetPower());
+
+            }
+    }
 
 
-
+    private IEnumerator ResetPower()
+        {
+            yield return new WaitForSeconds(10);
+            speed = 6;
+        }
 
 }

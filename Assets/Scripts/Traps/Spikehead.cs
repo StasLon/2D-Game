@@ -74,8 +74,14 @@ private void СheckForPlayer()
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.TryGetComponent(out Movement movement))
+            return;
+
+        Debug.Log($"{collision.gameObject.name}");    
+
         base.OnTriggerEnter2D(collision);
         Stop(); 
+
     }
 
 

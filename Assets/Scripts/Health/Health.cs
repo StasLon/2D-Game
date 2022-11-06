@@ -37,6 +37,8 @@ public class Health : MonoBehaviour
         
         if(currentHealth > 0)
         {
+            
+            
             anim.SetTrigger("hurt");
             StartCoroutine(Invunerability());
             SoundManager.instance.PlaySound(HurtSound);
@@ -48,15 +50,17 @@ public class Health : MonoBehaviour
                 //вимикає все, що померло
                 foreach (Behaviour component in components)
                     component.enabled = false;
+              
+                    
+                        anim.SetBool("grounded", true);
+                        anim.SetTrigger("die");
+                    
 
-
-                    anim.SetBool("grounded", true);
-                    anim.SetTrigger("die");
-
-
-
-                dead = true;
                 SoundManager.instance.PlaySound(deathSound);
+                dead = true;
+                
+
+                
             }
             
         }
@@ -94,8 +98,11 @@ public class Health : MonoBehaviour
  {
     dead = false;
     AddHealth(startingHealth);
+       
     anim.ResetTrigger("die");
     anim.Play("idle");
+    
+    
     StartCoroutine(Invunerability());
 
     //все вмикає
