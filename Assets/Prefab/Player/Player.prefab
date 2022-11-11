@@ -158,6 +158,7 @@ MonoBehaviour:
   speed: 6
   jumpPower: 13
   jumpSound: {fileID: 8300000, guid: 14810c58e6bf1564f85b99d26a27d84f, type: 3}
+  powerUpSound: {fileID: 0}
   coyoteTime: 0.25
   extraJumps: 1
   wallJumpX: 1500

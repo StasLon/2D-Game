@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Checkpoint
   - PowerUp
+  - CoolGem
   layers:
   - Default
   - TransparentFX

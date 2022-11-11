@@ -18,12 +18,18 @@ EditorBuildSettings:
     path: Assets/Levels/Lvl 2.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Levels/Lvl 3.unity
+    path: Assets/Levels/Lvl 4.unity
+    guid: 485cb0cd2fad4de498593ce348ac565c
+  - enabled: 1
+    path: Assets/Levels/Lvl 6.unity
+    guid: 86c4ba234b9879c4081852aea033fce4
+  - enabled: 1
+    path: Assets/Levels/Lvl 5.unity
     guid: 7bcc0ebec74ac3b41905cc1c67813bac
   - enabled: 1
     path: Assets/Levels/Boss.unity
     guid: 7f27fb1526b3b074e9ca1053300051b6
   - enabled: 1
-    path: Assets/Levels/Lvl 5.unity
+    path: Assets/Levels/LvlEND.unity
     guid: 6ecb05085672f844fb5bfc7a02576411
   m_configObjects: {}
