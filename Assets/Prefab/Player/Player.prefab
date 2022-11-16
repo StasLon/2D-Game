@@ -159,10 +159,13 @@ MonoBehaviour:
   jumpPower: 13
   jumpSound: {fileID: 8300000, guid: 14810c58e6bf1564f85b99d26a27d84f, type: 3}
   powerUpSound: {fileID: 0}
+  moneySound: {fileID: 8300000, guid: 46d342e7da17f11408643d774bf96b9b, type: 3}
   coyoteTime: 0.25
   extraJumps: 1
   wallJumpX: 1500
   wallJumpY: 750
+  money: 0
+  moneyText: {fileID: 0}
 --- !u!95 &5105709309317475135
 Animator:
   serializedVersion: 3

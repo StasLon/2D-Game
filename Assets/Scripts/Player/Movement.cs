@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Movement : MonoBehaviour
    [Header("Sounds")]
    [SerializeField] private AudioClip jumpSound;
    [SerializeField] private AudioClip powerUpSound;
+   [SerializeField] private AudioClip moneySound;
 
    [Header("Coyote Time")]
    [SerializeField] private float coyoteTime;
@@ -28,11 +30,14 @@ public class Movement : MonoBehaviour
     [SerializeField] private float wallJumpX; 
     [SerializeField] private float wallJumpY;
 
-
-
    private BoxCollider2D boxcoll;
    private Rigidbody2D rb;
    private Animator anim;
+
+   [Header("Money")]
+   [SerializeField] public int money = 0;
+   [SerializeField] public Text moneyText;
+
    [Header("Wall Jump")]
    private float wallJumpcooldown;
    private float horizontalInput;
@@ -43,6 +48,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         boxcoll = GetComponent<BoxCollider2D>();
+        PlayerPrefs.Save();
    }
 
 
@@ -176,6 +182,20 @@ public class Movement : MonoBehaviour
                 StartCoroutine(ResetPower());
 
             }
+        if(coll.tag == "Money")
+            {
+                money += 1;   
+                SoundManager.instance.PlaySound(moneySound);         
+                Destroy(coll.gameObject);
+                moneyText.text = money.ToString();
+                int totalCoins = PlayerPrefs.GetInt("Money");
+                PlayerPrefs.SetInt("Money", totalCoins + money);
+            }    
+        if(coll.tag == "son")
+            {
+                anim.SetTrigger("congrats");
+                StartCoroutine(Endgame());
+            }
     }
 
 
@@ -185,6 +205,13 @@ public class Movement : MonoBehaviour
             speed = 6;
         }
 
-   
+       
+    private IEnumerator Endgame()
+        {
+            
+            yield return new WaitForSeconds(5);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(12);
+            
+        }
 
 }

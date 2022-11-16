@@ -9,6 +9,8 @@ TagManager:
   - Checkpoint
   - PowerUp
   - CoolGem
+  - Money
+  - son
   layers:
   - Default
   - TransparentFX

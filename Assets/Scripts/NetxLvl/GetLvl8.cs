@@ -12,11 +12,8 @@ public class GetLvl8 : MonoBehaviour
                 UnityEngine.SceneManagement.SceneManager.LoadScene(8);
             }
     }
-
-
-
-
-
+    
+   
 
 
 }
