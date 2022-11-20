@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
    [SerializeField] private AudioClip jumpSound;
    [SerializeField] private AudioClip powerUpSound;
    [SerializeField] private AudioClip moneySound;
+   [SerializeField] private AudioClip speedSound;
 
    [Header("Coyote Time")]
    [SerializeField] private float coyoteTime;
@@ -177,7 +178,7 @@ public class Movement : MonoBehaviour
         if(coll.tag == "PowerUp")
             {
                 speed += 5;
-                SoundManager.instance.PlaySound(powerUpSound);
+                SoundManager.instance.PlaySound(speedSound);
                 Destroy(coll.gameObject);
                 StartCoroutine(ResetPower());
 
