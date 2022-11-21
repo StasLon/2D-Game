@@ -44,4 +44,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/NotLevels/LvlEND.unity
     guid: 6ecb05085672f844fb5bfc7a02576411
+  - enabled: 1
+    path: Assets/Levels/StoryXD/MainStory.unity
+    guid: ae47c57436fb86c45b2326487cd2dc1e
+  - enabled: 1
+    path: Assets/Levels/StoryXD/Slime.unity
+    guid: 2878d28afde12094781137489307cc22
+  - enabled: 1
+    path: Assets/Levels/StoryXD/Knight.unity
+    guid: b6ea7515fe7a6124fa5ef032486064fb
+  - enabled: 1
+    path: Assets/Levels/StoryXD/Mage.unity
+    guid: da5839f88e050094caf7da351b162ce5
   m_configObjects: {}
